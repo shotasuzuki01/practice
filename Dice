@@ -1,0 +1,15 @@
+import java.util.*;
+public class Dice{
+	public static void main(String[] args){
+		int diceA = new Random().next(6)+1;
+		int diceB = new Random().next(6)+1;
+		int plusDice = diceA + diceB;
+
+		if(plusDice%2==0){
+			System.out.println("偶数");
+		}else{
+			System.out.println("奇数");
+	}
+}
+}
+
