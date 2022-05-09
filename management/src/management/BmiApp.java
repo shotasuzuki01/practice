@@ -45,7 +45,7 @@ public class BmiApp {
 
 		while(true) {
 			System.out.println("***************メニューを選択してください***************");
-			System.out.println("|0 : 適正体重を表示| |1 : 前回のBMIを表示| |2 : BMI推移表を表示| |3 : カロリー計算| |4 : 情報| |5 : アプリを 終了します|");
+			System.out.println("|0 : 適正体重を表示| |1 : 前回のBMIを表示| |2 : 前回までのBMI推移表を表示| |3 : カロリー計算| |4 : 情報| |5 : アプリを 終了します|");
 			int choice=scan.nextInt();
 			switch(choice) {
 			case 0 :
@@ -73,7 +73,7 @@ public class BmiApp {
 				break;
 			case 2 :
 				line();
-				System.out.println("~BMI推移表~");
+				System.out.println("~前回までのBMI推移表~");
 				if(B!=null) {
 					graph(File,r,B);//BMI推移グラフ表示
 					line();
@@ -131,7 +131,7 @@ public class BmiApp {
 	//表描画---------------------------------------------------------------
 	public static void graph(String File,double bmi, String[] dayData) throws IOException {
 		String[] c=readFile(File);
-		for(int i=0;i<dayData.length;i++) {
+		for(int i=0;i<c.length;i++) {
 			String line=c[i];
 			if(i%2!=0) {
 				System.out.println(line);
